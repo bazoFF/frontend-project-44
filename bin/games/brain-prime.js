@@ -1,20 +1,16 @@
 #!/usr/bin/env node
-import {askQuestion, generateNumber, getUserAnswer, play} from "../../src/index.js";
+import { askQuestion, generateNumber, getUserAnswer, play } from "../../src/index.js";
 
-main();
+play('Answer "yes" if given number is prime. Otherwise answer "no".', () => {
+    const number = generateNumber(1, 11);
 
-function main() {
-    play('Answer "yes" if given number is prime. Otherwise answer "no".', () => {
-        const number = generateNumber(1, 11);
+    askQuestion(number);
 
-        askQuestion(number);
+    const userAnswer = getUserAnswer();
+    const correctAnswer = getCorrectAnswer(number);
 
-        const userAnswer = getUserAnswer();
-        const correctAnswer = getCorrectAnswer(number);
-
-        return [userAnswer, correctAnswer];
-    });
-}
+    return [userAnswer, correctAnswer];
+});
 
 function getCorrectAnswer(number) {
     for (let i = 2; i < number; i++) {

@@ -1,21 +1,17 @@
 #!/usr/bin/env node
-import {askQuestion, generateNumber, getUserAnswer, play} from "../../src/index.js";
+import { askQuestion, generateNumber, getUserAnswer, play } from "../../src/index.js";
 
-main();
+play('What number is missing in the progression?', () => {
+    const progression = generateProgression();
+    const missingNumberIndex = generateNumber(0, progression.length - 1);
+    const correctAnswer = String(progression.splice(missingNumberIndex, 1, '..'));
 
-function main() {
-    play('What number is missing in the progression?', () => {
-        const progression = generateProgression();
-        const missingNumberIndex = generateNumber(0, progression.length - 1);
-        const correctAnswer = String(progression.splice(missingNumberIndex, 1, '..'));
+    askQuestion(progression.join(' '));
 
-        askQuestion(progression.join(' '));
+    const userAnswer = getUserAnswer();
 
-        const userAnswer = getUserAnswer();
-
-        return [userAnswer, correctAnswer];
-    });
-}
+    return [userAnswer, correctAnswer];
+});
 
 function generateProgression() {
     const itemsCount = generateNumber(5, 10);
