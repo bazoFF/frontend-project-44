@@ -1,4 +1,4 @@
-debug: brain-progression publish
+debug: brain-prime publish
 
 install:
 	npm ci
@@ -17,6 +17,9 @@ brain-gcd:
 
 brain-progression:
 	node bin/games/brain-progression.js
+
+brain-prime:
+	node bin/games/brain-prime.js
 
 publish:
 	npm publish --dry-run
