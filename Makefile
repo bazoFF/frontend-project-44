@@ -1,4 +1,4 @@
-debug: brain-gcd publish
+debug: brain-progression publish
 
 install:
 	npm ci
@@ -14,6 +14,9 @@ brain-calc:
 
 brain-gcd:
 	node bin/games/brain-gcd.js
+
+brain-progression:
+	node bin/games/brain-progression.js
 
 publish:
 	npm publish --dry-run

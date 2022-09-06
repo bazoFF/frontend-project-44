@@ -23,8 +23,8 @@ export function play(description, callback) {
     end();
 }
 
-export function generateNumber() {
-    return Math.floor(Math.random() * 100) + 1;
+export function generateNumber(min = 1, max = 100) {
+    return Math.floor(min + Math.random() * (max + 1 - min));
 }
 
 export function checkFinish(successCount, name) {
