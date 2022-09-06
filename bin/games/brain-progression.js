@@ -6,7 +6,7 @@ main();
 function main() {
     play('What number is missing in the progression?', () => {
         const progression = generateProgression();
-        const missingNumberIndex = generateNumber(0, progression.length);
+        const missingNumberIndex = generateNumber(0, progression.length - 1);
         const correctAnswer = String(progression.splice(missingNumberIndex, 1, '..'));
 
         askQuestion(progression.join(' '));
