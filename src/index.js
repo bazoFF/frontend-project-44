@@ -1,5 +1,5 @@
 import readlineSync from "readline-sync";
-import {end, greeting} from "./cli.js";
+import {greeting} from "./cli.js";
 
 export function play(description, callback) {
     const name = greeting();
@@ -19,8 +19,6 @@ export function play(description, callback) {
             showError(userAnswer, correctAnswer, name);
         }
     }
-
-    end();
 }
 
 export function generateNumber(min = 1, max = 100) {

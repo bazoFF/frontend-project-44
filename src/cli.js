@@ -8,8 +8,3 @@ export function greeting() {
     return name;
 }
 
-export function end() {
-    console.log('\n');
-    setTimeout(() => {}, 700)
-}
-
