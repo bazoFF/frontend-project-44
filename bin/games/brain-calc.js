@@ -19,7 +19,7 @@ function main() {
 }
 
 function getCorrectAnswer(number1, number2, operator) {
-    switch(operator) {
+    switch (operator) {
         case '+':
             return number1 + number2;
         case '-':

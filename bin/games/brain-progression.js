@@ -19,7 +19,7 @@ function main() {
 
 function generateProgression() {
     const itemsCount = generateNumber(5, 10);
-    const progressionNumber = generateNumber(2,10);
+    const progressionNumber = generateNumber(2, 10);
     let currentNumber = generateNumber();
     const result = [];
 
