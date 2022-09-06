@@ -25,5 +25,8 @@ publish:
 	npm publish --dry-run
 
 lint:
-	npx eslint
+	npx eslint --no-eslintrc --config .eslintrc.yml .
+
+lint-fix:
+	npx eslint --no-eslintrc --config .eslintrc.yml . --fix
 
