@@ -17,6 +17,7 @@ export function play(description, callback) {
             checkFinish(successCount, name);
         } else {
             showError(userAnswer, correctAnswer, name);
+            break;
         }
     }
 }
