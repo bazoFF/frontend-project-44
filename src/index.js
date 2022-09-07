@@ -1,21 +1,27 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
-export function checkFinish(successCount, name) {
+export const checkFinish = (successCount, name) => {
   if (successCount === 3) {
     console.log(`Congratulations, ${name}!`);
   }
-}
+};
 
-export function showError(userAnswer, correctAnswer, name) {
+export const showError = (userAnswer, correctAnswer, name) => {
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${name}!`);
-}
+};
 
-export function play(description, callback) {
+export const randomNum = (min = 1, max = 100) => Math.floor(min + Math.random() * (max + 1 - min));
+
+export const getUserAnswer = () => String(readlineSync.question('Your answer: '));
+
+export const askQuestion = (question) => console.log(`Question: ${question}`);
+
+export const play = (requirements, callback) => {
   const name = greeting();
 
-  console.log(description);
+  console.log(requirements);
 
   let successCount = 0;
 
@@ -31,16 +37,4 @@ export function play(description, callback) {
       break;
     }
   }
-}
-
-export function generateNumber(min = 1, max = 100) {
-  return Math.floor(min + Math.random() * (max + 1 - min));
-}
-
-export function getUserAnswer() {
-  return String(readlineSync.question('Your answer: '));
-}
-
-export function askQuestion(question) {
-  console.log(`Question: ${question}`);
-}
+};
